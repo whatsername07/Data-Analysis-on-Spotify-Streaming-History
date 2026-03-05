@@ -1,0 +1,11 @@
+# Ignore Spotify streaming history CSV
+Spotify Extended Streaming History/full-history.csv
+
+# Python environment
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
