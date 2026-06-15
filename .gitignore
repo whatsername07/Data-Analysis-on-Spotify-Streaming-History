@@ -1,5 +1,6 @@
 # Ignore Spotify streaming history CSV
 Spotify Extended Streaming History/full-history.csv
+Spotify Extended Streaming History/cleaned-history.csv
 
 # Python environment
 .venv/
