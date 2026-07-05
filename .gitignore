@@ -11,3 +11,5 @@ Spotify Extended Streaming History/cleaned-history.csv
 
 # VS Code settings
 .vscode/
+
+.cache
