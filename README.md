@@ -9,8 +9,20 @@ Concepts: Extract-Transform-Load (ETL) pipelines, Time-Series Filtering, Defensi
 
 ## data-cleaning.ipynb
 
-In this notebook I refined the dataset by dropping all irrelevant columns/rows, and adding functionality to filter the dataset by year.
+Noise Reduction: Isolated core music streaming logs by identifying and removing non-music anomalies (audiobooks and podcasts), ensuring no data pollution in downstream models.
+
+Schema Optimisations: Streamlined the dataframe by stripping non-essential metadata columns, reducing memory overhead and improving array-processing efficiency
+
+Temporal Data Parsing: Converted string-based ISO 8601 timestamps into native Pandas datetime objects, allowing for more efficient processing and easier handling
+
+Parametric Data Segmentation: Engineered a reusable filtering pipeline to dynamically filter logs by year, establishing a framework for multi-year analysis
 
 ## wrapped.ipynb
 
-In this notebook I used Pandas to mimic the results of a Spotify wrapped: including top artists, tracks and genres (the latter of which used the Last.fm API)
+
+
+Vectorized Mapping: Developed a high-speed lookup pipeline using Pandas .map() to cross-reference local historical data with external music metadata.
+
+Robust API Integration: Consumed the Last.fm REST API to fetch crowdsourced genre data, implementing defensive exception handling to manage missing fields and empty payloads cleanly.
+
+Data Optimization: Implemented strict volume thresholds (top 150 artists) to maximize script execution speeds and prevent API rate-limiting blocks.
