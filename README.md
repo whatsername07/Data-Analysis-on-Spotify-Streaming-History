@@ -9,20 +9,20 @@ Concepts: Extract-Transform-Load (ETL) pipelines, Time-Series Filtering, Defensi
 
 ## data-cleaning.ipynb
 
-Noise Reduction: Isolated core music streaming logs by identifying and removing non-music anomalies (audiobooks and podcasts), ensuring no data pollution in downstream models.
+ - **Noise Reduction**: Isolated core music streaming logs by identifying and removing non-music anomalies (audiobooks and podcasts), ensuring no data pollution in downstream models.
 
-Schema Optimisations: Streamlined the dataframe by stripping non-essential metadata columns, reducing memory overhead and improving array-processing efficiency
+ - **Schema Optimisations**: Streamlined the dataframe by stripping non-essential metadata columns, reducing memory overhead and improving array-processing efficiency
 
-Temporal Data Parsing: Converted string-based ISO 8601 timestamps into native Pandas datetime objects, allowing for more efficient processing and easier handling
+ - **Temporal Data Parsing**: Converted string-based ISO 8601 timestamps into native Pandas datetime objects, allowing for more efficient processing and easier handling
 
-Parametric Data Segmentation: Engineered a reusable filtering pipeline to dynamically filter logs by year, establishing a framework for multi-year analysis
+ - **Parametric Data Segmentation**: Engineered a reusable filtering pipeline to dynamically filter logs by year, establishing a framework for multi-year analysis
 
 ## wrapped.ipynb
 
+ - **Spotify Wrapped Analytics**: Developed consumption dashboards for top artists and genres. Standardized data accuracy by implementing composite grouping (Track + Artist) to eliminate misattribution errors caused by track title collisions, ensuring data integrity in final rankings.
 
+ - **Vectorized Mapping**: Developed a high-speed lookup pipeline using Pandas .map() to cross-reference local historical data with external music metadata.
 
-Vectorized Mapping: Developed a high-speed lookup pipeline using Pandas .map() to cross-reference local historical data with external music metadata.
+ - **Robust API Integration**: Consumed the Last.fm REST API to fetch crowdsourced genre data, implementing defensive exception handling to manage missing fields and empty payloads cleanly.
 
-Robust API Integration: Consumed the Last.fm REST API to fetch crowdsourced genre data, implementing defensive exception handling to manage missing fields and empty payloads cleanly.
-
-Data Optimization: Implemented strict volume thresholds (top 150 artists) to maximize script execution speeds and prevent API rate-limiting blocks.
+ - **Data Optimization**: Implemented strict volume thresholds (top 150 artists) to maximize script execution speeds and prevent API rate-limiting blocks.
