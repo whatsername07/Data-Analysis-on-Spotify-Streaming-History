@@ -1,8 +1,13 @@
-## Data Analysis on Spotify Streaming History
+# Data Analysis on Spotify Streaming History
 
 A series of Jupyter notebooks aimed at applying data science concepts to my own streaming history using pandas.
 
-# data-cleaning.ipynb
+# Core Capabilities Demonstrated
+Data Infrastructure: Python, Pandas, Requests, Jupyter
+
+Concepts: Extract-Transform-Load (ETL) pipelines, Time-Series Filtering, Defensive API Consumption, Data Vectorization
+
+## data-cleaning.ipynb
 
 In this notebook I refined the dataset by dropping all irrelevant columns/rows, and adding functionality to filter the dataset by year.
 
