@@ -13,3 +13,4 @@ Spotify Extended Streaming History/cleaned-history.csv
 .vscode/
 
 .cache
+__pycache__/
