@@ -39,4 +39,4 @@ A series of Jupyter notebooks aimed at applying data science concepts to my own 
  * **Edge-Case Resolution**: Resolved zero-slicing and integer truncation errors during fractional percentile calculations by enforcing defensive rounding controls.
  * **Custom Visualization Engineering**: Developed modular Matplotlib functions to generate normalized Pareto charts ($0–100\%$ rank scale) and comparative Lorenz curves, visualizing listening inequality across artists, tracks, and genres.
 
-![Pareto Analysis of Spotify Artists](images/pareto_chart.png)
+![Pareto Analysis of Spotify Artists](images/artistChart.png)
