@@ -21,3 +21,6 @@ def topTracks(df):
     artists_tracks['time_played'] = artists_tracks['time_played'].apply(lambda x: x / 60000)  # convert ms to minutes
     artists_tracks['time_played'] = artists_tracks['time_played'].apply(lambda x: round(x, 2))  # round to 2 decimal places
     return artists_tracks
+
+def filter_by_hour(df, hour):
+    return df[df['ts'].dt.hour == hour]
