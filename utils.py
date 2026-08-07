@@ -24,3 +24,7 @@ def topTracks(df):
 
 def filter_by_hour(df, hour):
     return df[df['ts'].dt.hour == hour]
+
+def findSkipRatio(df):
+    skips = (df['reason_end'] == 'fwdbtn').sum()
+    return skips/len(df) if len(df) > 0 else 0.0
