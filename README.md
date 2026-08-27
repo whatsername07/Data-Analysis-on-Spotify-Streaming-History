@@ -12,17 +12,26 @@ A series of Jupyter notebooks aimed at applying data science concepts to my own 
 
 ## Notebook Breakdown
 
-### `data-cleaning.ipynb`
+### `pareto.ipynb`
 
- * **Noise Reduction**: Isolated core music streaming logs by identifying and removing non-music anomalies (audiobooks and podcasts), ensuring no data pollution in downstream models.
+ * **Statistical Distribution Analysis**: Quantified listening concentration using the Pareto Principle (80/20 rule), proving that top artists severely overperform the baseline by accounting for ~94% of total stream time.
+ * **Multi-Label Normalization**: Mitigated co-occurrence bias in crowdsourced Last.fm subgenre tags, resolving artificial long-tail inflation caused by non-mutually exclusive entity mappings.
+ * **Edge-Case Resolution**: Resolved zero-slicing and integer truncation errors during fractional percentile calculations by enforcing defensive rounding controls.
+ * **Custom Visualization Engineering**: Developed modular Matplotlib functions to generate normalized Pareto charts ($0–100\%$ rank scale) and comparative Lorenz curves, visualizing listening inequality across artists, tracks, and genres.
 
- * **Schema Optimisations**: Streamlined the dataframe by stripping non-essential metadata columns, reducing memory overhead and improving array-processing efficiency
+![Pareto Analysis of Spotify Artists](images/artistChart.png)
 
- * **Temporal Data Parsing**: Converted string-based ISO 8601 timestamps into native Pandas datetime objects, allowing for more efficient processing and easier handling
 
- * **Parametric Data Segmentation**: Engineered a reusable filtering pipeline to dynamically filter logs by year, establishing a framework for multi-year analysis
+### `circadian.ipynb`
 
-### `wrapped.ipynb`
+ * **End-to-End Time-Series ETL & Circular Modeling:** Parses multi-year Spotify timestamps, partitioning activity into discrete 24-hour intervals, and applies a 72-hour cyclic padding technique to eliminate midnight boundary truncation artifacts in Gaussian Kernel Density Estimation (KDE).
+ * **Non-Parametric Signal Processing:** Employs `scipy.signal.find_peaks` with height and prominence thresholding to accurately detect local maxima, programmatically isolating primary and secondary listening peaks (e.g., 16:00 and 22:00) from continuous probability density functions.
+ * **Behavioral Metric Engineering:** Quantifies session engagement by mapping streaming reason codes (`reason_end == 'fwdbtn'`) into hourly track skip ratios, measuring baseline stability against an overall mean.
+ * **Information-Theoretic Diversity Profiling:** Integrates external metadata by mapping Last.fm genre tags to top artists and implementing Normalized Shannon Entropy ($H / \log_2 N$) across hourly distributions to mathematically evaluate listening focus versus genre exploration across the day.
+
+![Gaussian KDE of Listening Times](images/kdeChart.png)
+
+ ### `wrapped.ipynb`
 
  * **Spotify Wrapped Analytics**: Developed consumption dashboards for top artists and genres. Standardized data accuracy by implementing composite grouping (Track + Artist) to eliminate misattribution errors caused by track title collisions, ensuring data integrity in final rankings.
 
@@ -32,11 +41,12 @@ A series of Jupyter notebooks aimed at applying data science concepts to my own 
 
  * **Data Optimization**: Implemented strict volume thresholds (top 150 artists) to maximize script execution speeds and prevent API rate-limiting blocks.
 
-### `pareto.ipynb`
+ ### `data-cleaning.ipynb`
 
- * **Statistical Distribution Analysis**: Quantified listening concentration using the Pareto Principle (80/20 rule), proving that top artists severely overperform the baseline by accounting for ~94% of total stream time.
- * **Multi-Label Normalization**: Mitigated co-occurrence bias in crowdsourced Last.fm subgenre tags, resolving artificial long-tail inflation caused by non-mutually exclusive entity mappings.
- * **Edge-Case Resolution**: Resolved zero-slicing and integer truncation errors during fractional percentile calculations by enforcing defensive rounding controls.
- * **Custom Visualization Engineering**: Developed modular Matplotlib functions to generate normalized Pareto charts ($0–100\%$ rank scale) and comparative Lorenz curves, visualizing listening inequality across artists, tracks, and genres.
+ * **Noise Reduction**: Isolated core music streaming logs by identifying and removing non-music anomalies (audiobooks and podcasts), ensuring no data pollution in downstream models.
 
-![Pareto Analysis of Spotify Artists](images/artistChart.png)
+ * **Schema Optimisations**: Streamlined the dataframe by stripping non-essential metadata columns, reducing memory overhead and improving array-processing efficiency
+
+ * **Temporal Data Parsing**: Converted string-based ISO 8601 timestamps into native Pandas datetime objects, allowing for more efficient processing and easier handling
+
+ * **Parametric Data Segmentation**: Engineered a reusable filtering pipeline to dynamically filter logs by year, establishing a framework for multi-year analysis
